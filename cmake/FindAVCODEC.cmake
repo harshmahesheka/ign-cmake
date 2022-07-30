@@ -15,14 +15,14 @@
 #
 ########################################
 # Find avcodec
-include(GzPkgConfig)
-gz_pkg_check_modules_quiet(AVCODEC libavcodec)
+include(IgnPkgConfig)
+ign_pkg_check_modules_quiet(AVCODEC libavcodec)
 
 if(NOT AVCODEC_FOUND)
-  include(GzManualSearch)
-  gz_manual_search(AVCODEC
-                   HEADER_NAMES "libavcodec/avcodec.h"
-                   LIBRARY_NAMES "avcodec")
+  include(IgnManualSearch)
+  ign_manual_search(AVCODEC
+                    HEADER_NAMES "libavcodec/avcodec.h"
+                    LIBRARY_NAMES "avcodec")
 endif()
 
 include(FindPackageHandleStandardArgs)

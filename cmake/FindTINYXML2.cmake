@@ -16,10 +16,10 @@
 ########################################
 # Find tinyxml2. Only debian distributions package tinyxml with a pkg-config.
 
-include(GzPkgConfig)
+include(IgnPkgConfig)
 
 # Use pkg_check_modules to start
-gz_pkg_check_modules_quiet(TINYXML2 tinyxml2)
+ign_pkg_check_modules_quiet(TINYXML2 tinyxml2)
 
 # If that failed, then fall back to manual detection (necessary for MacOS)
 if(NOT TINYXML2_FOUND)
@@ -53,8 +53,8 @@ if(NOT TINYXML2_FOUND)
   endif()
 
   if(TINYXML2_FOUND)
-    include(GzImportTarget)
-    gz_import_target(TINYXML2)
+    include(IgnImportTarget)
+    ign_import_target(TINYXML2)
   endif()
 
   include(FindPackageHandleStandardArgs)

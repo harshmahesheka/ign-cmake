@@ -11,17 +11,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Compile and test
         id: ci
-        uses: gazebo-tooling/action-gz-ci@focal
+        uses: ignition-tooling/action-ignition-ci@focal
         with:
           cmake-args: '-DBUILDSYSTEM_TESTING=True'
-  jammy-ci:
-    runs-on: ubuntu-latest
-    name: Ubuntu Jammy CI
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Compile and test
-        id: ci
-        uses: gazebo-tooling/action-gz-ci@jammy
-        with:
-          cmake-args: '-DBUILDSYSTEM_TESTING=True'
+

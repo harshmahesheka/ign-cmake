@@ -24,8 +24,8 @@ set(minor_version ${FreeImage_FIND_VERSION_MINOR})
 set(full_version ${major_version}.${minor_version})
 
 if (NOT WIN32)
-  include(GzPkgConfig)
-  gz_pkg_config_library_entry(FreeImage freeimage)
+  include(IgnPkgConfig)
+  ign_pkg_config_library_entry(FreeImage freeimage)
 
   # If we don't have PkgConfig, or if PkgConfig failed, then do a manual search
   if(NOT FreeImage_FOUND)
@@ -87,8 +87,8 @@ if (NOT WIN32)
 
   if(FreeImage_FOUND)
     # Create the imported target for FreeImage if we found it
-    include(GzImportTarget)
-    gz_import_target(FreeImage)
+    include(IgnImportTarget)
+    ign_import_target(FreeImage)
   endif()
 
   include(FindPackageHandleStandardArgs)
@@ -140,10 +140,10 @@ else()
   endif()
 
   if (FreeImage_FOUND)
-    include(GzPkgConfig)
-    gz_pkg_config_library_entry(FreeImage "FreeImage")
-    include(GzImportTarget)
-    gz_import_target(FreeImage)
+    include(IgnPkgConfig)
+    ign_pkg_config_library_entry(FreeImage "FreeImage")
+    include(IgnImportTarget)
+    ign_import_target(FreeImage)
   endif()
 
 endif()

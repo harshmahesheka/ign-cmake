@@ -26,9 +26,9 @@
 # SQLite3_FOUND             System has sqlite3 library and headers
 
 if(SQLite3_FIND_VERSION)
-  gz_pkg_check_modules_quiet(SQLite3 "sqlite3 >= ${SQLite3_FIND_VERSION}")
+  ign_pkg_check_modules_quiet(SQLite3 "sqlite3 >= ${SQLite3_FIND_VERSION}")
 else()
-  gz_pkg_check_modules_quiet(SQLite3 "sqlite")
+  ign_pkg_check_modules_quiet(SQLite3 "sqlite")
 endif()
 
 if(MSVC)
@@ -51,6 +51,6 @@ if(MSVC)
     endif()
   endif()
 
-  gz_import_target(SQLite3)
+  ign_import_target(SQLite3)
 
 endif()
